@@ -1,0 +1,414 @@
+schema Units;
+
+
+// ---------- UEF Swarm 01 (Rifle Squad) Unit ----------
+export UnitTemplate UNT_UEF_Swarm_01 =
+{
+    .templateHandle = "UNT_UEF_Swarm_01",
+    .PanelSort  = 1u8,
+    .formationTemplateID = "LightInfantryNormalLine", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eInfantry,
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.none, // bulletSpam?
+    .oreCost    = 5, //30,
+    .gasCost    = 0,
+    .timeCost   = 15,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Swarm_01","ELM_UEF_Swarm_01","ELM_UEF_Swarm_01","ELM_UEF_Swarm_01","ELM_UEF_Swarm_01","ELM_UEF_Swarm_01","ELM_UEF_Swarm_01", },
+};
+
+
+// ---------- UEF Swarm 02 (Cavalier Team) Unit ----------
+export UnitTemplate UNT_UEF_Swarm_02 =
+{
+    .templateHandle = "UNT_UEF_Swarm_02",
+    .PanelSort  = 3u8,
+    .formationTemplateID = "LightInfantryNormalLine", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eInfantry,
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.none, // bulletSpam?
+    .oreCost    = 5, //100,
+    .gasCost    = 0,
+    .timeCost   = 20,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Swarm_02","ELM_UEF_Swarm_02","ELM_UEF_Swarm_02","ELM_UEF_Swarm_02","ELM_UEF_Swarm_02","ELM_UEF_Swarm_02","ELM_UEF_Swarm_02", },
+};
+
+
+// ---------- UEF Swarm 06 (Missile Infantry) Unit ----------
+export UnitTemplate UNT_UEF_Swarm_06 =
+{
+    .templateHandle = "UNT_UEF_Swarm_06",
+    .PanelSort  = 2u8,
+    .formationTemplateID = "LightInfantryNormalLine", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eInfantry,
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.ap,
+    .oreCost    = 5, //100,
+    .gasCost    = 0,
+    .timeCost   = 20,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Swarm_06","ELM_UEF_Swarm_06","ELM_UEF_Swarm_06","ELM_UEF_Swarm_06","ELM_UEF_Swarm_06","ELM_UEF_Swarm_06","ELM_UEF_Swarm_06", },
+};
+
+// ---------- UEF Drone 01 (Reaver) Unit ----------
+export UnitTemplate UNT_UEF_Drone_01 =
+{
+    .templateHandle = "UNT_UEF_Drone_01",
+    .PanelSort  = 31u8,
+    .formationTemplateID = "ReaverDiamond",
+    .roleFlags  = UnitRoleFlags.eArmor,
+    .counteredBy = CounterFlagsAI.ap,
+    .counterProvided = CounterFlagsAI.ap,
+    .oreCost    = 5, //100,
+    .gasCost    = 0,
+    .timeCost   = 25,
+    .logCost    = 1,
+    .elements   = { "ELM_UEf_Drone_01", "ELM_UEf_Drone_01", "ELM_UEf_Drone_01", "ELM_UEf_Drone_01", },
+};
+
+
+// ---------- UEF Armor 01 (Leopard IV) Unit ----------
+export UnitTemplate UNT_UEF_Armor_01 =
+{
+    .templateHandle = "UNT_UEF_Armor_01",
+    .PanelSort  = 4u8,
+    .roleFlags  = UnitRoleFlags.eArmor,
+    .formationTemplateID = "TankDiamond", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.ap,
+    .counterProvided = CounterFlagsAI.ap,
+    .oreCost    = 5, //350,
+    .gasCost    = 0,
+    .timeCost   = 35,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Armor_01", "ELM_UEF_Armor_01", "ELM_UEF_Armor_01", "ELM_UEF_Armor_01", },
+};
+
+
+// ---------- UEF Recon 01 (Pathfinder) Unit ----------
+export UnitTemplate UNT_UEF_Recon_01 =
+{
+    .templateHandle = "UNT_UEF_Recon_01",
+    .roleFlags  = UnitRoleFlags.eSupport,
+    .formationTemplateID = "ReconUnit", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.none,
+    .PanelSort  = 5u8,
+    .oreCost    = 5, //100,
+    .gasCost    = 0,
+    .timeCost   = 20,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Recon_01", "ELM_UEF_Recon_01", "ELM_UEF_Recon_01", "ELM_UEF_Recon_01", },
+};
+
+// ---------- UEF Truck 01 (Supply Truck) - Scenario Placement Only ----------
+export UnitTemplate UNT_UEF_Truck_01 =
+{
+    .templateHandle = "UNT_UEF_Truck_01",
+    .templateFlags = UnitTemplateFlags.unbuildable,
+    .roleFlags = UnitRoleFlags.eSupport,
+    .formationTemplateID = "Solo",
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.none,
+    .oreCost = 100,
+    .gasCost = 0,
+    .timeCost = 20,
+    .logCost = 1,
+    .elements = { "ELM_UEF_Truck_01", },
+};
+
+// ---------- UEF Artillery 01 (Stormbreaker) Unit ----------
+export UnitTemplate UNT_UEF_Artillery_01 =
+{
+    .templateHandle = "UNT_UEF_Artillery_01",
+    .PanelSort  = 7u8,
+    .roleFlags  = UnitRoleFlags.eIndirect | UnitRoleFlags.eArmor,
+    .formationTemplateID = "ArtDuo", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.aoe,
+    .oreCost    = 5, //225,
+    .gasCost    = 5,
+    .timeCost   = 35,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Artillery_01", "ELM_UEF_Artillery_01", },
+};
+
+// ---------- UEF Sniper (Orion) 01 Unit ----------
+export UnitTemplate UNT_UEF_Sniper_01 =
+{
+    .templateHandle = "UNT_UEF_Sniper_01",
+    .PanelSort  = 8u8,
+    .roleFlags  = UnitRoleFlags.eArmor,
+    .formationTemplateID = "SnipeWedge", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.ap,
+    .oreCost    = 5, //75,
+    .gasCost    = 5,
+    .timeCost   = 50,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Sniper_01", "ELM_UEF_Sniper_01", "ELM_UEF_Sniper_01", },
+};
+
+
+// ---------- UEF Armor 02 (Titan M-7) Unit ----------
+export UnitTemplate UNT_UEF_Armor_02 =
+{
+    .templateHandle = "UNT_UEF_Armor_02",
+    .PanelSort  = 10u8,
+    .roleFlags  = UnitRoleFlags.eHeavy,
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.ap,
+    .counterProvided = CounterFlagsAI.aa | CounterFlagsAI.ap | CounterFlagsAI.aoe, // !!! trifecta !!!
+    .oreCost    = 5, //450,
+    .gasCost    = 5,
+    .timeCost   = 90,
+    .logCost    = 1,
+    .elements   =
+    {
+        "ELM_UEF_Armor_02"
+    },
+};
+
+// ---------- UEF Armor 03 (Golem MQ-9G) Unit ----------
+export UnitTemplate UNT_UEF_Armor_03 =
+{
+    .templateHandle = "UNT_UEF_Armor_03",
+    .templateFlags = UnitTemplateFlags.unbuildable,
+    .roleFlags = UnitRoleFlags.eHeavy,
+    .formationTemplateID = "StaggerDuo",
+    .counteredBy = CounterFlagsAI.ap,
+    .counterProvided = CounterFlagsAI.ap,
+    .oreCost = 5,
+    .gasCost = 5,
+    .timeCost = 30,
+    .logCost = 1,
+    .elements = { "ELM_UEF_Armor_03", "ELM_UEF_Armor_03", },
+};
+
+// ---------- Recruit UEF Armor 03 (Golem MQ-9G) Unit ----------
+export UnitTemplate UNT_UEF_Armor_03_Recruit = update(UNT_UEF_Armor_03)
+{
+    .templateHandle = "UNT_UEF_Armor_03_Recruit",
+    .PanelSort = 32u8,
+    .templateFlags = UnitTemplateFlags.none,
+};
+
+// ---------- UEF Landship 01 (Goliath) ----------
+export UnitTemplate UNT_UEF_Landship_01 =
+{
+    .templateHandle = "UNT_UEF_Landship_01",
+    .PanelSort  = 11u8,
+    .roleFlags  = UnitRoleFlags.eHeavy,
+    .templateFlags = UnitTemplateFlags.spawnOnFactory | UnitTemplateFlags.eSuper,
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.ap,
+    .counterProvided = CounterFlagsAI.ap,
+    .oreCost    = 5, //800,
+    .gasCost    = 5,
+    .timeCost   = 200,
+    .logCost    = 1,
+    .elements   =
+    {
+        "ELM_UEF_Landship_01"
+    },
+
+	.OrderMoveAudioCue     		= { "UEF_Landship_01_Move_01", "UEF_Landship_01_Move_02", "UEF_Landship_01_Move_03", "UEF_Landship_01_Move_04", "UEF_Landship_01_Move_05", "UEF_Landship_01_Move_06", },
+    .OrderAttackAudioCue  		= { "UEF_Landship_01_Attack_01", "UEF_Landship_01_Attack_02", "UEF_Landship_01_Attack_03", "UEF_Landship_01_Attack_04", "UEF_Landship_01_Attack_05", },
+    .OrderPatrolAudioCue   		= { "UEF_Landship_01_Patrol_01", "UEF_Landship_01_Patrol_02", "UEF_Landship_01_Patrol_03", },
+    .OrderStopAudioCue    		= { "UEF_Landship_01_Stop_01", "UEF_Landship_01_Stop_02", "UEF_Landship_01_Stop_03", "UEF_Landship_01_Stop_04", },
+    .OrderInvalidAudioCue  		= { "UEF_Landship_01_Invalid_01", "UEF_Landship_01_Invalid_02", "UEF_Landship_01_Invalid_03", },
+    .SelectAudioCue        		= { "UEF_Landship_01_Select_01", "UEF_Landship_01_Select_02", "UEF_Landship_01_Select_03", "UEF_Landship_01_Select_04", "UEF_Landship_01_Select_05", "UEF_Landship_01_Select_06", "UEF_Landship_01_Select_07", "UEF_Landship_01_Select_08", },
+};
+
+
+
+// ---------- UEF Super 01 (Godslayer) ----------
+export UnitTemplate UNT_UEF_Super_01 =
+{
+    .templateHandle = "UNT_UEF_Super_01",
+    .PanelSort  = 12u8,
+    .roleFlags  = UnitRoleFlags.eHeavy,
+    .templateFlags = UnitTemplateFlags.spawnOnFactory | UnitTemplateFlags.eSuper,
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.ap,
+    .counterProvided = CounterFlagsAI.ap | CounterFlagsAI.aoe,
+    .oreCost    = 5, //1600,
+    .gasCost    = 5,
+    .timeCost   = 300,
+    .logCost    = 1,
+    .elements   =
+    {
+        "ELM_UEF_Super_01"
+    },
+	
+	.OrderMoveAudioCue     		= { "UEF_Super_01_Move_01", "UEF_Super_01_Move_02", "UEF_Super_01_Move_03", },
+    .OrderAttackAudioCue  		= { "UEF_Super_01_Attack_01", "UEF_Super_01_Attack_02", "UEF_Super_01_Attack_03", "UEF_Super_01_Attack_04", "UEF_Super_01_Attack_05", },
+    .OrderPatrolAudioCue   		= { "UEF_Super_01_Patrol_01", "UEF_Super_01_Patrol_02", "UEF_Super_01_Patrol_03", },
+    .OrderStopAudioCue    		= { "UEF_Super_01_Stop_01", "UEF_Super_01_Stop_02", "UEF_Super_01_Stop_03", },
+    .OrderInvalidAudioCue  		= { "UEF_Super_01_Invalid_01", "UEF_Super_01_Invalid_02", "UEF_Super_01_Invalid_03", },
+    .SelectAudioCue        		= { "UEF_Super_01_Select_01", "UEF_Super_01_Select_02", "UEF_Super_01_Select_03", },
+};
+// ---------- UEF Recon 01a Unit - Campaign Vis Up ----------
+export UnitTemplate UNT_UEF_Recon_01_VisUp =
+{
+    .templateHandle = "UNT_UEF_Recon_01",
+    .roleFlags  = UnitRoleFlags.eSupport,
+    .templateFlags = UnitTemplateFlags.unbuildable,
+    .formationTemplateID = "ReconUnit", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.none,
+    .oreCost    = 5, //100,
+    .gasCost    = 0,
+    .timeCost   = 20,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Recon_01_VisUp", "ELM_UEF_Recon_01_VisUp", "ELM_UEF_Recon_01_VisUp", "ELM_UEF_Recon_01_VisUp", },
+};
+
+// ---------- UEF Recon 03 Unit (Trailbreaker) ----------
+export UnitTemplate UNT_UEF_Recon_03 =
+{
+    .templateHandle = "UNT_UEF_Recon_03",
+    .roleFlags  = UnitRoleFlags.eSupport,
+    .formationTemplateID = "StaggerDuo",
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.none,
+    .PanelSort  = 9u8,
+    .oreCost    = 5, //75,
+    .gasCost    = 5,
+    .timeCost   = 20,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Recon_03", "ELM_UEF_Recon_03", },
+};
+
+// ---------- UEF Starter Unit (Razor Company - Starting Army Only) ----------
+export UnitTemplate UNT_UEF_Starter =
+{
+    .templateHandle = "UNT_UEF_Starter",
+    .formationTemplateID = "StarterPatrol",
+    .roleFlags  = UnitRoleFlags.eSupport | UnitRoleFlags.eArmor | UnitRoleFlags.eInfantry,
+    .templateFlags = UnitTemplateFlags.unbuildable | UnitTemplateFlags.eAIConservative,
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.none,
+    .factoryUnitSpawnOffset = { 0, -400 },
+    .oreCost    = 5, //400,
+    .gasCost    = 0,
+    .timeCost   = 40,
+    .logCost    = 0,
+    .elements   = {
+        "ELM_UEF_Recon_02", "ELM_UEF_Recon_02", // Position 0: Rear (Infantry Support Vehicle)
+        "ELM_UEF_Swarm_04",  // Position 9: Front center (Razor Company leader)		
+        "ELM_UEF_Swarm_05", "ELM_UEF_Swarm_05",  // Positions 2-3: Infantry row 1 
+        "ELM_UEF_Swarm_05", "ELM_UEF_Swarm_05",  // Positions 4-5: Infantry row 2 		
+        "ELM_UEF_Swarm_03", "ELM_UEF_Swarm_03",  // Positions 6-7: Infantry row 3 left
+        "ELM_UEF_Swarm_03", "ELM_UEF_Swarm_03",  // Positions 8-9: Infantry row 3 right
+    },
+	
+	.OrderMoveAudioCue     = { "UEF_Starter_01_Move_01", "UEF_Starter_01_Move_02", "UEF_Starter_01_Move_03", },
+    .OrderAttackAudioCue   = { "UEF_Starter_01_Attack_01", "UEF_Starter_01_Attack_02", "UEF_Starter_01_Attack_03", "UEF_Starter_01_Attack_04", "UEF_Starter_01_Attack_05", },
+    .OrderPatrolAudioCue   = { "UEF_Starter_01_Patrol_01", "UEF_Starter_01_Patrol_02", "UEF_Starter_01_Patrol_03", },
+    .OrderStopAudioCue     = { "UEF_Starter_01_Stop_01", "UEF_Starter_01_Stop_02", "UEF_Starter_01_Stop_03", },
+    .OrderInvalidAudioCue  = { "UEF_Starter_01_Invalid_01", "UEF_Starter_01_Invalid_02", "UEF_Starter_01_Invalid_03", },
+    .SelectAudioCue        = { "UEF_Starter_01_Select_01", "UEF_Starter_01_Select_02", "UEF_Starter_01_Select_03", },	
+};
+
+// ---------- UEF AA 01 (Tridon Mk3) Unit ----------
+export UnitTemplate UNT_UEF_AntiAir_01 =
+{
+    .templateHandle = "UNT_UEF_AntiAir_01",
+    .PanelSort  = 6u8,
+    .roleFlags  = UnitRoleFlags.eAntiAir,
+    .counteredBy = CounterFlagsAI.aoe,
+    .counterProvided = CounterFlagsAI.aa,
+    .formationTemplateID = "AADiamond", // local formation of elements within the Unit
+    .oreCost    = 5, //250,
+    .gasCost    = 0,
+    .timeCost   = 20,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_AntiAir_01", "ELM_UEF_AntiAir_01", "ELM_UEF_AntiAir_01", },
+};
+
+// ---------- UEF Gunship 01 (Hammer Su-75) Unit ----------
+export UnitTemplate UNT_UEF_Gunship_01 =
+{
+    .templateHandle = "UNT_UEF_Gunship_01",
+    .PanelSort  = 13u8,
+    .roleFlags  = UnitRoleFlags.eAircraft,
+    .formationTemplateID = "GunshipWedge", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.aa,
+    .counterProvided = CounterFlagsAI.ap,
+    .oreCost    = 5, //250,
+    .gasCost    = 5,
+    .timeCost   = 50,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Gunship_01", "ELM_UEF_Gunship_01", "ELM_UEF_Gunship_01", },
+};
+
+
+// ---------- UEF Bomber 01 (Phoenix B-32) Unit ----------
+export UnitTemplate UNT_UEF_Bomber_01 =
+{
+    .templateHandle = "UNT_UEF_Bomber_01",
+    .PanelSort  = 15u8,
+    .roleFlags  = UnitRoleFlags.eAircraft,
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.aa,
+    .counterProvided = CounterFlagsAI.aoe,
+    .oreCost    = 5, //225,
+    .gasCost    = 5,
+    .timeCost   = 60,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Bomber_01", },
+};
+
+
+// ---------- UEF Fighter 01 (Thunderbolt F-47) Unit ----------
+export UnitTemplate UNT_UEF_Fighter_01 =
+{
+    .templateHandle = "UNT_UEF_Fighter_01",
+    .PanelSort  = 14u8,
+    .roleFlags  = UnitRoleFlags.eAircraft | UnitRoleFlags.eAntiAir,
+    .formationTemplateID = "GunshipWedge", // local formation of elements within the Unit
+    .counteredBy = CounterFlagsAI.aa,
+    .counterProvided = CounterFlagsAI.aa,
+    .oreCost    = 5, //275,
+    .gasCost    = 5,
+    .timeCost   = 45,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Fighter_01", "ELM_UEF_Fighter_01", "ELM_UEF_Fighter_01", },
+};
+
+// ---------- UEF Fighter 02 (Weakened, 1/3 HP) - Campaign Only ----------
+export UnitTemplate UNT_UEF_Fighter_02 = update(UNT_UEF_Fighter_01)
+{
+    .templateHandle = "UNT_UEF_Fighter_02",
+    .elements   = { "ELM_UEF_Fighter_02", "ELM_UEF_Fighter_02", "ELM_UEF_Fighter_02", },
+};
+
+// ---------- UEF Scout 01 (Recon Drone) Unit ----------
+export UnitTemplate UNT_UEF_Scout_01 =
+{
+    .templateHandle = "UNT_UEF_Scout_01",
+    .PanelSort  = 16u8,
+    .roleFlags  = UnitRoleFlags.eAircraft | UnitRoleFlags.eSupport,
+    .formationTemplateID = "Solo",
+    .counteredBy = CounterFlagsAI.aa,
+    .counterProvided = CounterFlagsAI.none,
+    .oreCost    = 5, //50,
+    .gasCost    = 0,
+    .timeCost   = 20,
+    .logCost    = 1,
+    .elements   = { "ELM_UEF_Scout_01" },
+};
+
+// ---------- UEF Worker 01 Unit ----------
+export UnitTemplate UNT_UEF_Worker_01 =
+{
+    .templateHandle = "UNT_UEF_Worker_01",
+    .formationTemplateID = "Worker", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eWorker,
+    .counteredBy = CounterFlagsAI.aa,
+    .counterProvided = CounterFlagsAI.none,
+    .timeCost   = 45,
+    .logCost    = 0,
+    .elements   = { "ELM_UEF_Worker_01"},
+};
